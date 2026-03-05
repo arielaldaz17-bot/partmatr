@@ -1,0 +1,264 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY */
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #0f2027;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00c6ff;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* SELECTORES */
+.selector-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.selector-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.selector label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#btnEmpezar {
+    padding: 10px 20px;
+    background-color: #2258b6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btnEmpezar:hover {
+    background-color: #1e3c72;
+    transform: scale(1.05);
+}
+
+/* EJERCICIO */
+.ejercicio-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.ejercicio-container {
+    background-color: #ffffff;
+    padding: 30px;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.ejercicio-container h3 {
+    margin-bottom: 15px;
+}
+
+#respuesta {
+    padding: 8px;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#btnVerificar {
+    padding: 8px 15px;
+    background-color: #97ff93;
+    color: rgb(3, 3, 3);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btnVerificar:hover {
+    background-color: #acf855;
+    transform: scale(1.05);
+}
+
+
+#resultado {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* BOTÓN PISTA */
+#btnPista {
+    padding: 8px 15px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 10px;
+}
+
+#btnPista:hover {
+    background-color: #e68900;
+    transform: scale(1.05);
+}
+
+/* TEXTO DE PISTA */
+#pista {
+    margin-top: 10px;
+    font-style: italic;
+    font-weight: 500;
+    color: #ff9800;
+}
+
+/* PERFIL */
+.perfil-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.perfil-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.perfil-container input,
+.perfil-container select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#btnGuardarPerfil {
+    background: #2a5298;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.stats {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* PERFIL DEL USUARIO */
+.perfil-usuario {
+    background-color: #ffffff;      /* Fondo blanco */
+    padding: 15px 20px;            /* Espaciado interno */
+    border-radius: 12px;           /* Bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra suave */
+    width: fit-content;            /* Ajusta al contenido */
+    margin: 20px auto;             /* Centrado horizontal con margen superior */
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+ 
+  /* Botón de pista */
+        #btnPista {
+            padding: 8px 15px;
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-left: 5px;
+        }
+        #btnPista:hover {
+            background-color: #ffdd33;
+        }
+        
+/* Efecto hover para destacar */
+.perfil-usuario:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* Estilo de los textos */
+.perfil-usuario p {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.perfil-usuario span {
+    font-weight: bold;
+    color: #2a5298;   /* Color destacado azul del tema */
+}

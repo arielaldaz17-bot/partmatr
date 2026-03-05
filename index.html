@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partmat</title>
+    <link rel="stylesheet" href="partmat.css">
+    <link rel="stylesheet" href="LOGIN.html">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Partmat</h1>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Temas</a></li>
+                <li><a href="#">Progreso</a></li>
+                <li><a href="#" id="btnLogout">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Perfil del usuario -->
+    <div class="perfil-usuario">
+        <p>Bienvenido <span id="nombreUsuario"></span></p>
+        <p>Vidas: <span id="vidas">3</span></p>
+        <p>Puntos: <span id="puntos">0</span></p>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h2>Aprende Matemáticas Fácilmente</h2>
+        <p>Elige tu nivel, selecciona un tema y empieza a practicar.</p>
+    </section>
+
+    <!-- PERFIL -->
+    <section class="perfil-section">
+        <div class="perfil-container">
+            <h3>Perfil del Estudiante</h3>
+
+            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="number" id="edad" placeholder="Edad">
+            
+            <select id="estudios">
+                <option value="">Nivel de estudios</option>
+                <option value="primaria">Primaria</option>
+                <option value="secundaria">Secundaria</option>
+                <option value="universidad">Universidad</option>
+            </select>
+
+            <button id="btnGuardarPerfil">Guardar Perfil</button>
+
+        </div>
+    </section>
+
+    <!-- SELECTORES -->
+    <section class="selector-section">
+        <div class="selector-container">
+            <div class="selector">
+                <label for="nivel">Nivel:</label>
+                <select id="nivel">
+                    <option value="basico">Básico</option>
+                    <option value="intermedio">Intermedio</option>
+                    <option value="avanzado">Avanzado</option>
+                </select>
+            </div>
+
+            <div class="selector">
+                <label for="tema">Tema:</label>
+                <select id="tema">
+                    <option value="operaciones">Operaciones Básicas</option>
+                    <option value="algebra">Álgebra</option>
+                    <option value="trigonometria">Trigonometría</option>
+                    <option value="calculo">Cálculo</option>
+                    <option value="geometria">Geometría</option>
+                </select>
+            </div>
+
+            <button id="btnEmpezar">Empezar</button>
+        </div>
+    </section>
+
+    <!-- AREA DE EJERCICIO -->
+    <section class="ejercicio-section">
+        <div class="ejercicio-container">
+            <h3>Ejercicio</h3>
+            <p id="pregunta">Aquí aparecerá la pregunta...</p>
+            <input type="text" id="respuesta" placeholder="Escribe tu respuesta">
+
+            <div style="margin-top:10px;">
+                <button id="btnVerificar">Verificar</button>
+                <button id="btnPista">Pedir Pista</button>
+            </div>
+
+            <p id="resultado" style="margin-top:10px;"></p>
+            <p id="pista" style="color: blue;"></p>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="partmat.js"></script>
+    <script type="module">
+        import { auth, onAuthStateChanged, signOut } from "./firebase.js";
+
+        // Protege la página
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                // Redirige al login si no está logueado
+                window.location.href = "login.html";
+            } else {
+                console.log("Usuario logueado:", user.displayName);
+            }
+        });
+
+        // Botón cerrar sesión
+        document.getElementById("btnLogout").addEventListener("click", async () => {
+            await signOut(auth);
+            window.location.href = "login.html";
+        });
+    </script>
+<script src="partmat.js"></script>
+<script src="importe.JS"></script>
+</body>
+</html>
